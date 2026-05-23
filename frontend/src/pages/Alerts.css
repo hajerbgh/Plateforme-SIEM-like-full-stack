@@ -1,0 +1,155 @@
+.alerts-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.alerts-list-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 24px 0;
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  width: 32px; height: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text2);
+  transition: background 0.15s;
+}
+.icon-btn:hover { background: var(--surface2); }
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  flex-shrink: 0;
+}
+.filter-bar select {
+  padding: 5px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 12px;
+  color: var(--text2);
+  background: var(--surface);
+}
+
+.alerts-table { flex: 1; overflow-y: auto; }
+
+.table-head {
+  display: grid;
+  grid-template-columns: 100px 1fr 130px 110px 100px;
+  gap: 12px;
+  padding: 8px 24px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+  position: sticky; top: 0;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 100px 1fr 130px 110px 100px;
+  gap: 12px;
+  padding: 11px 24px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.1s;
+  font-size: 13px;
+}
+.table-row:hover   { background: var(--surface2); }
+.table-row.selected { background: var(--accent-bg); }
+
+.alert-title { font-weight: 500; color: var(--text1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ip-mono     { font-family: var(--mono); font-size: 12px; color: var(--text2); }
+.time-text   { font-size: 11px; color: var(--text3); }
+
+.status-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.alert-detail-panel {
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--surface);
+}
+
+.detail-header {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.detail-title { font-size: 15px; font-weight: 600; color: var(--text1); line-height: 1.4; margin-top: 4px; }
+
+.detail-body { flex: 1; overflow-y: auto; }
+.detail-section { padding: 16px 20px; border-bottom: 1px solid var(--border); }
+.section-label  { font-size: 10px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+
+.info-grid { display: flex; flex-direction: column; gap: 8px; }
+.info-row  { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+.info-label { color: var(--text3); }
+.info-value { color: var(--text1); font-weight: 500; text-align: right; }
+
+.mitre-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 2px 7px;
+  background: #EEF3FF;
+  color: #0057FF;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.notes-area {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  font-size: 13px;
+  color: var(--text1);
+  background: var(--surface2);
+  resize: vertical;
+  line-height: 1.6;
+}
+.notes-area:focus { outline: 2px solid var(--accent); border-color: transparent; }
+
+.action-btns { display: flex; flex-direction: column; gap: 8px; }
+.action-btn {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: opacity 0.15s;
+  text-align: center;
+}
+.action-btn:hover { opacity: 0.85; }
+.investigating { background: #FFFBEB; color: #D97706; border-color: #FDE68A; }
+.resolved      { background: #ECFDF5; color: #059669; border-color: #A7F3D0; }
+.false-pos     { background: var(--surface2); color: var(--text3); border-color: var(--border); }
+
+.empty-state { padding: 48px 24px; text-align: center; color: var(--text3); font-size: 13px; }
